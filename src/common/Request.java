@@ -24,18 +24,18 @@ Note: it is important to send User information on each Request to validate that 
 */
 public class Request extends JSONObject {
 	public RequestType requestType;
-	public User authorizationInformation;
+	public User user;
 	public String data;
 
 	public Request() {
 		this.requestType = null;
-		this.authorizationInformation = null;
+		this.user = null;
 		this.data = null;
 	}
 
 	public Request(RequestType requestType, User authorizationInformation, JSONObject data) {
 		this.requestType = requestType;
-		this.authorizationInformation = authorizationInformation;
+		this.user = authorizationInformation;
 		if (data == null) {
 			this.data = null;
 		} else {
