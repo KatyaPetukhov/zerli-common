@@ -12,6 +12,10 @@ public enum RequestType {
 	/* UserManager: */
 	GET_USER, ADD_USER, APPROVE_USER, REMOVE_USER, GET_USERS,
 
-	/* TODO: Other managers */
-	GET_ITEMS, SUBMIT_ORDER, GET_ORDERS,;
+	/* ProductManager */
+	GET_CATEGORIES, GET_PRODUCTS, ADD_PRODUCT, REMOVE_PRODUCT,
+
+	/* OrderManager */
+	/* AccountManager */
+	/* etc. */
 }
