@@ -31,7 +31,6 @@ public interface UserManager {
 
 	/* Possible error are send via ServerError data class: */
 	public class TooManyAttempts extends Exception {
-		private static final long serialVersionUID = 4180122998486458438L;
 	}
 
 	public class WeakPassword extends Exception {

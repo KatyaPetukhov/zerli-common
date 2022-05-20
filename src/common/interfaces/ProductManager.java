@@ -2,6 +2,7 @@ package common.interfaces;
 
 import java.util.List;
 
+import common.interfaces.UserManager.PermissionDenied;
 import common.request_data.Product;
 import common.request_data.ProductList;
 
@@ -13,8 +14,10 @@ public interface ProductManager {
 	public List<String> getCategories();
 
 	public ProductList getProducts(String category, int start, int amount);
+	
+	public Product getProduct(String name);
 
-	public void addProduct(Product product);
+	public boolean addProduct(Product product) throws PermissionDenied;
 
 	public void removeProduct(Product product);
 }
