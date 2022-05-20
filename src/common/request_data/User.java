@@ -2,11 +2,13 @@ package common.request_data;
 
 import common.JSONObject;
 import common.Role;
+import common.Shop;
 
 public class User extends JSONObject {
 	public String username;
 	public String password;
 	public String nickname; // Display name for a greeting
+	public Shop shopname;
 	public Role userrole;
 	public boolean approved;
 

@@ -3,6 +3,7 @@ package common.interfaces;
 import java.util.List;
 
 import common.Role;
+import common.Shop;
 import common.request_data.User;
 
 public interface UserManager {
@@ -69,7 +70,7 @@ public interface UserManager {
 	 * be added only by Manager, otherwise PermissionDenied will be thrown. Returns
 	 * true if user was added.
 	 */
-	public boolean addNewUser(String username, String password, String nickname, Role role, boolean approved)
+	public boolean addNewUser(String username, String password, String nickname,Shop shopname, Role role, boolean approved)
 			throws WeakPassword, PermissionDenied;
 
 	/*
