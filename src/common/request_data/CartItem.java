@@ -6,7 +6,24 @@ import common.JSONObject;
 
 public class CartItem extends JSONObject{
 	public HashMap<String, Integer> items;
-	public String greeting;
+	public String amount;
+	public String recipient;
+	public String greetingMessage;
+	public String signature;
+	public String shop;
+	public String date;
+	public String time;
+	public String address;
+	public String phone;
+	public String paymentName;
+	public String paymentID;
+	public String paymentPhone;
+	public String cardNumber;
+	public String expirationDate;
+	public String CVV;
+
+	
+	
 
 	
 	
