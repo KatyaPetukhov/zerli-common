@@ -4,6 +4,7 @@ import java.util.List;
 
 import common.Role;
 import common.Shop;
+import common.request_data.ComplaintList;
 import common.request_data.User;
 
 public interface UserManager {
@@ -70,8 +71,8 @@ public interface UserManager {
 	 * be added only by Manager, otherwise PermissionDenied will be thrown. Returns
 	 * true if user was added.
 	 */
-	public boolean addNewUser(String username, String password, String nickname,Shop shopname, Role role, boolean approved)
-			throws WeakPassword, PermissionDenied;
+	public boolean addNewUser(String username, String password, String nickname, Shop shopname, Role role,
+			boolean approved) throws WeakPassword, PermissionDenied;
 
 	/*
 	 * APPROVE_USER
@@ -97,4 +98,19 @@ public interface UserManager {
 	 * approved/not approved. Can be done only by Manager.
 	 */
 	public List<User> getUsers(boolean approved, int start, int amount) throws PermissionDenied;
+
+	/*
+	 * ADD_NEW_COMPLIANT
+	 * 
+	 * Return boolean if the new complaint were added to sql
+	 */
+	public boolean addNewCompliant(String userName, String orderId, String complaint, String date, String price,
+			String complaintStatus, String supportName);
+
+	/*
+	 * GET_ALL_COMPLAINTS
+	 * 
+	 * Return list of all complaints that specific support user has asked for.
+	 * */
+	public ComplaintList getAllComplaints(String supportName);
 }
