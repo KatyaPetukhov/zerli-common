@@ -1,9 +1,12 @@
 package common.interfaces;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import common.Role;
 import common.Shop;
+import common.request_data.IncomeReport;
+import common.request_data.IncomeReportList;
 import common.request_data.User;
 
 public interface UserManager {
@@ -80,6 +83,25 @@ public interface UserManager {
 	 * PermissionDenied thrown. If user does not exist or already approved - returns
 	 * false.
 	 */
+	public boolean addNewOrder(String username,String orderID,Shop shopname,String approved)
+			throws WeakPassword, PermissionDenied;
+	
+	/*
+	 * WILL BE REMOVED!!!!!!
+	 */
+	
+	public boolean addNewIncomeReport(Shop shop,String year,String month,String Income,String BSI,String TNO) throws SQLException;
+	
+	/*
+	 * ADD_INCOME_REPORT
+	 * Adds a new Income report to DB 
+	 */
+	
+	public IncomeReport getIncomeReport(Shop shop,String year,String month) throws SQLException;
+	/*
+	 * GET_INCOME_REPORT
+	 * Gets an income report from the DB to show to the Manager/Owner 
+	 */
 	public boolean approveUser(String user) throws PermissionDenied;
 
 	/*
@@ -97,4 +119,6 @@ public interface UserManager {
 	 * approved/not approved. Can be done only by Manager.
 	 */
 	public List<User> getUsers(boolean approved, int start, int amount) throws PermissionDenied;
+
+	public IncomeReportList getAllIncomeReports();
 }

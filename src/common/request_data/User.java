@@ -24,6 +24,7 @@ public class User extends JSONObject {
 		this.password = password;
 		this.nickname = null;
 		this.userrole = null;
+		this.shopname = Shop.NONE;
 		this.approved = false;
 	}
 
