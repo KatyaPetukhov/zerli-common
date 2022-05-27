@@ -13,7 +13,7 @@ public interface ProductManager {
 	/* Should never return null or empty list, ALL_CATEGORY always exists. */
 	public List<String> getCategories();
 
-	public ProductList getProducts(String category, int start, int amount);
+	public ProductList getProducts(String category);
 	
 	public Product getProduct(String name);
 
