@@ -105,12 +105,18 @@ public interface UserManager {
 	 * Return boolean if the new complaint were added to sql
 	 */
 	public boolean addNewCompliant(String userName, String orderId, String complaint, String date, String price,
-			String complaintStatus, String supportName);
+			String complaintStatus, String supportName, String refund);
 
 	/*
 	 * GET_ALL_COMPLAINTS
 	 * 
 	 * Return list of all complaints that specific support user has asked for.
-	 * */
+	 */
 	public ComplaintList getAllComplaints(String supportName);
+	/*
+	 * SET_REFUND_AMOUNT
+	 * 
+	 * set refund to this user according his orderId.
+	 */
+	public boolean setRefundAmount(String orderId, String refund);
 }
