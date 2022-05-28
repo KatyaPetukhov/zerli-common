@@ -4,10 +4,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 import common.Role;
-import common.Shop;
+import common.interfaces.UserManager.PermissionDenied;
 import common.request_data.IncomeReport;
 import common.request_data.IncomeReportList;
+import common.request_data.Shop;
 import common.request_data.User;
+import common.request_data.UsersList;
 
 public interface UserManager {
 	/*
@@ -118,7 +120,19 @@ public interface UserManager {
 	 * Returns a list of "amount" existing users starting from user "start" by type
 	 * approved/not approved. Can be done only by Manager.
 	 */
-	public List<User> getUsers(boolean approved, int start, int amount) throws PermissionDenied;
-
+	public UsersList getUsers();
+	
+	/*
+	 * GET_INCOME_REPORT_BC
+	 * 
+	 * will gets all other reports for BarCharts
+	 */
 	public IncomeReportList getAllIncomeReports();
+	
+	/*
+	 * CHANGE_STATUS
+	 * 
+	 * Changes the Status of an account , BLOCKED/APPROVED
+	 */
+	public boolean changeStatus (User user);
 }

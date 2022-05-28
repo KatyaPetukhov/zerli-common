@@ -1,4 +1,4 @@
-package common;
+package common.request_data;
 
 public enum Shop {
 	/* User role Manager gets a shop, Owner gets all shops*/
@@ -6,8 +6,8 @@ public enum Shop {
 	NONE("None"),
 	HAIFA("Haifa"),
 	NAHARIYA("Nahariya");
-	
-	
+
+
 	private String s;
 
 	Shop(String s) {
@@ -18,4 +18,4 @@ public enum Shop {
 		return s;
 	}
 
-}
+} 

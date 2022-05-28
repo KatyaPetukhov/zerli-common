@@ -1,7 +1,6 @@
 package common.request_data;
 
 import common.JSONObject;
-import common.Shop;
 
 public class IncomeReport extends JSONObject {
 	public Shop shop;
