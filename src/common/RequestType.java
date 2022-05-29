@@ -10,7 +10,7 @@ public enum RequestType {
 	PING, // Checks is server is alive. Should return unmodified request.
 
 	/* UserManager: */
-	GET_USER, ADD_USER, APPROVE_USER, REMOVE_USER, GET_USERS,
+	GET_USER, ADD_USER, APPROVE_USER, REMOVE_USER, GET_USERS, GET_USER_OREDERS,
 
 	/* ProductManager */
 	GET_CATEGORIES, GET_PRODUCTS, ADD_PRODUCT, REMOVE_PRODUCT, GET_ALL_COMPLAINTS, GET_REFUND_AMOUNT, GET_PRODUCT,

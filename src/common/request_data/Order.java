@@ -1,7 +1,5 @@
-package common.request_data;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+package common.request_data;
 
 import common.JSONObject;
 
@@ -11,7 +9,7 @@ public class Order extends JSONObject {
 	public String date;
 	public String hour;
 	public ProductList products;
-	public String status;
+	public OrderStatus status;
 	public double totalPrice = 0.0;
 	public String recipient;
 	public String greetingMessage;
@@ -21,7 +19,7 @@ public class Order extends JSONObject {
 	public String city;
 	public String phone; // Recipient of order
 	public String paymentPhone; // Payment phone
-	public String orderType;
+	public OrderType orderType;
 
 	public Order() {
 		this.orderNumber = null;
@@ -29,7 +27,7 @@ public class Order extends JSONObject {
 		this.date = null;
 		this.hour = null;
 		this.products = null;
-		this.status = null;
+		this.status = OrderStatus.valueOf(address);
 		this.totalPrice = 0.0;
 		this.recipient = null;
 		this.greetingMessage = null;
@@ -42,9 +40,10 @@ public class Order extends JSONObject {
 		this.orderType = null;
 	}
 
-	public Order(String orderNumber, String username, String date, String hour, ProductList products, String status,
-			double totalPrice, String recipient, String greetingMessage, String signature, Shop shop, String address,
-			String city, String phone, String paymentName, String paymentPhone, String orderType) {
+	public Order(String orderNumber, String username, String date, String hour, ProductList products,
+			OrderStatus status, double totalPrice, String recipient, String greetingMessage, String signature,
+			Shop shop, String address, String city, String phone, String paymentName, String paymentPhone,
+			OrderType orderType) {
 		super();
 		this.orderNumber = orderNumber;
 		this.username = username;
@@ -62,6 +61,12 @@ public class Order extends JSONObject {
 		this.phone = phone;
 		this.paymentPhone = paymentPhone;
 		this.orderType = orderType;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
 
 	public static Order fromJson(String s) {
