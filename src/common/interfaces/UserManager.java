@@ -1,6 +1,7 @@
 package common.interfaces;
 
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 import common.Role;
@@ -75,8 +76,11 @@ public interface UserManager {
 	 * be added only by Manager, otherwise PermissionDenied will be thrown. Returns
 	 * true if user was added.
 	 */
-	public boolean addNewUser(String username, String password, String nickname,Shop shopname, Role role, boolean approved)
-			throws WeakPassword, PermissionDenied;
+	public boolean addNewUser(String username, String password, String nickname,Shop shopname, Role role,
+			boolean approved,String cardNumber,String expirationDate,String cvv,boolean logInfo)
+	
+	
+			throws WeakPassword, PermissionDenied, SQLIntegrityConstraintViolationException;
 
 	/*
 	 * APPROVE_USER
@@ -135,4 +139,18 @@ public interface UserManager {
 	 * Changes the Status of an account , BLOCKED/APPROVED
 	 */
 	public boolean changeStatus (User user);
+	
+	/*
+	 * LOG_OFF_USER
+	 * 
+	 * Changes the logInfo to LOGED_OFF
+	 */
+	public boolean logOffUser(User user);
+	
+	/*
+	 * LOG_IN
+	 * 
+	 * Changes the logInfo to LOGED_In
+	 */
+	public boolean logInUser(User user);
 }
