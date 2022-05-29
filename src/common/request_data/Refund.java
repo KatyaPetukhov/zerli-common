@@ -1,6 +1,9 @@
 package common.request_data;
 
 import common.JSONObject;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.ChoiceBox;
 
 public class Refund extends JSONObject {
 
@@ -13,8 +16,8 @@ public class Refund extends JSONObject {
 	}
 
 	public Refund(String orderId, String refund) {
-		this.orderId = orderId;
 		this.refund = refund;
+		this.orderId = orderId;
 	}
 
 	public static Refund fromJson(String s) {

@@ -43,11 +43,6 @@ public class Complaint extends JSONObject {
 		this.refund = refund;
 	}
 
-	public static Complaint fromJson(String s) {
-		/* Add such function to each subclass! */
-		return (Complaint) fromJson(s, Complaint.class);
-	}
-
 	public String getUserName() {
 		return userName;
 	}
@@ -94,5 +89,10 @@ public class Complaint extends JSONObject {
 
 	public void setComplaintStatus(String complaintStatus) {
 		this.complaintStatus = complaintStatus;
+	}
+
+	public static Complaint fromJson(String s) {
+		/* Add such function to each subclass! */
+		return (Complaint) fromJson(s, Complaint.class);
 	}
 }
