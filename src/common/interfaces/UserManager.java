@@ -59,6 +59,7 @@ public interface UserManager {
 	public class PermissionDenied extends Exception {
 		private static final long serialVersionUID = -2211480302172449980L;
 	}
+	
 
 	/* Required functions for RequestType: */
 	/*
@@ -153,4 +154,10 @@ public interface UserManager {
 	 * Changes the logInfo to LOGED_In
 	 */
 	public boolean logInUser(User user);
+	
+	
+	/*
+	 * No requestType, function is only used in serverusermanager
+	 */
+	public User getLoggedInUser(String username, String password);
 }

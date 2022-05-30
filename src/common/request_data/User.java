@@ -23,6 +23,8 @@ public class User extends JSONObject {
 	}
 
 	public String isApproved() {
+		if(userrole.equals(Role.GUEST))
+			return "Frozen";
 		if(approved)
 			return "Approved";
 		return "Blocked";
