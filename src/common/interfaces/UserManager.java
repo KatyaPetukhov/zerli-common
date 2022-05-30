@@ -129,7 +129,8 @@ public interface UserManager {
 	 * 
 	 * fill answers to DB.
 	 */
-	public boolean setSurveyAnswers(int q1, int q2, int q3, int q4,int q5, int q6, String type,String shopName,String Date);
+	public boolean setSurveyAnswers(int q1, int q2, int q3, int q4, int q5, int q6, String type, String shopName,
+			String Date);
 
 	/*
 	 * LOG_OFF_USER
@@ -144,4 +145,11 @@ public interface UserManager {
 	 * Changes the logInfo to LOGED_In
 	 */
 	public boolean logInUser(User user);
+
+	/*
+	 * GET_MONTH_AVARGE
+	 * 
+	 * Display monthly survey analysis.
+	 */
+	public boolean getMonthAvarge();
 }
