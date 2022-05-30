@@ -2,7 +2,6 @@ package common.request_data;
 
 import common.JSONObject;
 import common.Role;
-import common.Shop;
 
 public class User extends JSONObject {
 	public String username;
@@ -11,6 +10,10 @@ public class User extends JSONObject {
 	public Shop shopname;
 	public Role userrole;
 	public boolean approved;
+	public String cardNumber;
+	public String exDate;
+	public String cvv;
+	public boolean logInfo;
 
 	public User() {
 		/*
@@ -25,6 +28,10 @@ public class User extends JSONObject {
 		this.nickname = null;
 		this.userrole = null;
 		this.approved = false;
+		this.cardNumber = null;
+		this.exDate = null;
+		this.cvv = null;
+		this.logInfo = false;
 	}
 
 	public static User fromJson(String s) {

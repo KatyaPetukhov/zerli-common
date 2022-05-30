@@ -1,11 +1,11 @@
 package common.interfaces;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 import common.Role;
-import common.Shop;
+import common.request_data.Shop;
 import common.request_data.ComplaintList;
-import common.request_data.OrderList;
 import common.request_data.User;
 
 public interface UserManager {
@@ -72,8 +72,10 @@ public interface UserManager {
 	 * be added only by Manager, otherwise PermissionDenied will be thrown. Returns
 	 * true if user was added.
 	 */
-	public boolean addNewUser(String username, String password, String nickname, Role role, boolean approved)
-			throws WeakPassword, PermissionDenied;
+	public boolean addNewUser(String username, String password, String nickname, Shop shopname, Role role,
+			boolean approved, String cardNumber, String expirationDate, String cvv, boolean logInfo)
+
+			throws WeakPassword, PermissionDenied, SQLIntegrityConstraintViolationException;
 
 	/*
 	 * APPROVE_USER
@@ -121,4 +123,25 @@ public interface UserManager {
 	 * set refund to this user according his orderId.
 	 */
 	public boolean setRefundAmount(String orderId, String refund);
+
+	/*
+	 * SET_SURVEY_ANSWERS
+	 * 
+	 * fill answers to DB.
+	 */
+	public boolean setSurveyAnswers(int q1, int q2, int q3, int q4,int q5, int q6, String type,String shopName,String Date);
+
+	/*
+	 * LOG_OFF_USER
+	 * 
+	 * Changes the logInfo to LOGED_OFF
+	 */
+	public boolean logOffUser(User user);
+
+	/*
+	 * LOG_IN
+	 * 
+	 * Changes the logInfo to LOGED_In
+	 */
+	public boolean logInUser(User user);
 }
