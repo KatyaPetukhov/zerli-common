@@ -1,18 +1,18 @@
 package common.request_data;
 
-public enum Shop {
-	/* User role Manager gets a shop, Owner gets all shops*/
-	ALL("All"),
-//	NONE("None"),
-	HAIFA("Haifa"),
-	NAHARIYA("Nahariya");
+public enum OrderType {
 	
+	//NONE("None"),
+	DELIVERY("Delivery"),
+	TAKE_AWAY("Take away");
+
 	
 	private String s;
 
-	private Shop(final String s) {
+	OrderType(final String s) {
 		this.s = s;
 	}
+
 	
 	 public String getValue() {
 	        return s;
@@ -21,10 +21,10 @@ public enum Shop {
 	public String toString() {
 		return this.getValue();
 	}
-
 	
-    public static Shop fromString(String text) {
-        for (Shop b : Shop.values()) {
+	
+    public static OrderType fromString(String text) {
+        for (OrderType b : OrderType.values()) {
             if (b.s.equalsIgnoreCase(text)) {
                 return b;
             }
