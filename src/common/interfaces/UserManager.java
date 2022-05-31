@@ -6,6 +6,7 @@ import java.util.List;
 
 import common.Role;
 import common.interfaces.UserManager.PermissionDenied;
+import common.request_data.ComplaintList;
 import common.request_data.IncomeReport;
 import common.request_data.IncomeReportList;
 import common.request_data.Shop;
@@ -160,4 +161,44 @@ public interface UserManager {
 	 * No requestType, function is only used in serverusermanager
 	 */
 	public User getLoggedInUser(String username, String password);
+	
+	/*
+	*
+	 * ADD_NEW_COMPLIANT
+	 * 
+	 * Return boolean if the new complaint were added to sql
+	 */
+	public boolean addNewCompliant(String userName, String orderId, String complaint, String date, String price,
+			String complaintStatus, String supportName, String refund);
+
+	/*
+	 * GET_ALL_COMPLAINTS
+	 * 
+	 * Return list of all complaints that specific support user has asked for.
+	 */
+	public ComplaintList getAllComplaints(String supportName);
+
+	/*
+	 * SET_REFUND_AMOUNT
+	 * 
+	 * set refund to this user according his orderId.
+	 */
+	public boolean setRefundAmount(String orderId, String refund);
+
+	/*
+	 * SET_SURVEY_ANSWERS
+	 * 
+	 * fill answers to DB.
+	 */
+	public boolean setSurveyAnswers(int q1, int q2, int q3, int q4, int q5, int q6, String type, String shopName,
+			String Date);
+	
+	/*
+	 * GET_MONTH_AVARGE
+	 * 
+	 * Display monthly survey analysis.
+	 */
+	public boolean getMonthAvarge();
 }
+
+
