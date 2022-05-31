@@ -22,18 +22,15 @@ public class User extends JSONObject {
 		this.nickname = nickname;
 	}
 
-	public String isApproved() {
-		if(userrole.equals(Role.GUEST))
-			return "Frozen";
-		if(approved)
-			return "Approved";
-		return "Blocked";
-			
+	public String getAccountStatus() {
+		return accountStatus;
 	}
 
 	public void setApproved(boolean approved) {
 		this.approved = approved;
 	}
+	
+	
 
 	public String username;
 	public String password;
@@ -45,6 +42,7 @@ public class User extends JSONObject {
 	public String exDate;
 	public String cvv;
 	public boolean logInfo;
+	public String accountStatus; //Approved/Blocked/frozen
 
 	public User() {
 		/*
@@ -64,6 +62,15 @@ public class User extends JSONObject {
 		this.exDate = null;
 		this.cvv = null;
 		this.logInfo = false;
+		
+	}
+	
+	public void setAccountStatus() {
+		if(!approved)
+			accountStatus = "Blocked";
+		else if(userrole.equals(Role.CUSTOMER))
+				accountStatus="Approved";
+		else accountStatus ="Frozen";
 	}
 
 	public static User fromJson(String s) {
