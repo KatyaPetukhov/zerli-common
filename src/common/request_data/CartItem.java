@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import common.JSONObject;
-
+//KATYA
 public class CartItem extends JSONObject{
 	public HashMap<String, Integer> items;
 	public Double price=0.0;
