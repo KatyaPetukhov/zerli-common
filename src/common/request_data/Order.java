@@ -9,7 +9,7 @@ public class Order extends JSONObject {
 	public String username;
 	public String date;
 	public String hour;
-	public ProductList products;
+	public ProductListCart products;
 	public OrderStatus status;
 	public double totalPrice = 0.0;
 	public String recipient;
@@ -22,6 +22,8 @@ public class Order extends JSONObject {
 	public String paymentPhone; // Payment phone
 	public OrderType orderType;
 	public String timeOfOrder;
+	public boolean gotDelivery;
+	public CancelStatus cancel;
 
 	public Order() {
 		this.orderNumber = null;
@@ -40,12 +42,14 @@ public class Order extends JSONObject {
 		this.phone = null;
 		this.paymentPhone = null;
 		this.orderType = null;
+		this.gotDelivery=false;
+		this.cancel=null;
 	}
 
-	public Order(String orderNumber, String username, String date, String hour, ProductList products,
+	public Order(String orderNumber, String username, String date, String hour, ProductListCart products,
 			OrderStatus status, double totalPrice, String recipient, String greetingMessage, String signature,
 			Shop shop, String address, String city, String phone, String paymentName, String paymentPhone,
-			OrderType orderType) {
+			OrderType orderType, CancelStatus cancel, boolean gotDelivery) {
 		super();
 		this.orderNumber = orderNumber;
 		this.username = username;
@@ -63,6 +67,8 @@ public class Order extends JSONObject {
 		this.phone = phone;
 		this.paymentPhone = paymentPhone;
 		this.orderType = orderType;
+		this.cancel=cancel;
+		this.gotDelivery=gotDelivery;
 	}
 
 	@Override
@@ -75,77 +81,7 @@ public class Order extends JSONObject {
 		/* Add such function to each subclass! */
 		return (Order) fromJson(s, Order.class);
 	}
-	
-//	public String getOrderNumber() {
-//		return orderNumber;
-//	}
-//	public double getTotalPrice() {
-//		return totalPrice;
-//	}
-//	public OrderStatus getStatus() {
-//		return status;
-//	}
-//
-//	public String getDate() {
-//		return date;
-//	}
-//
-//
-//	public String getHour() {
-//		return hour;
-//	}
-//
-//
-//	public ProductList getProduct() {
-//		return products;
-//	}
-//
-//
-//	public String getRecipient() {
-//		return recipient;
-//	}
-//
-//
-//	public String getGreetingMessage() {
-//		return greetingMessage;
-//	}
-//
-//
-//	public String getSignature() {
-//		return signature;
-//	}
-//
-//
-//	public Shop getShop() {
-//		return shop;
-//	}
-//
-//
-//	public String getAddress() {
-//		return address;
-//	}
-//
-//
-//	public String getCity() {
-//		return city;
-//	}
-//
-//
-//
-//	public String getPhone() {
-//		return phone;
-//	}
-//
-//
-//	public String getPaymentPhone() {
-//		return paymentPhone;
-//	}
-//
-//
-//	public OrderType getOrderType() {
-//		return orderType;
-//	}
-//
+
 
 
 }

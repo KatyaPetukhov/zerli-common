@@ -1,7 +1,7 @@
 package common.request_data;
 
 public class OrderTable {
-Order order;
+public Order order;
 
 
 
@@ -28,8 +28,18 @@ public String getHour() {
 	return order.hour;
 }
 
-public ProductList getProducts() {
-	return order.products;
+public String getProducts() {
+	StringBuilder str = new StringBuilder();
+	boolean isFirst=true;
+	for(String p : order.products.items.keySet()) {
+		if(!isFirst) {
+			str.insert(str.length(), ", ");
+		}
+		isFirst=false;
+		str.insert(str.length(), p + " < " + order.products.items.get(p) +" > " );
+		
+	}
+	return str.toString();
 }
 
 public OrderStatus getStatus() {
