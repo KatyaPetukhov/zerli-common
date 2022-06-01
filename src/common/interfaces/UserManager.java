@@ -79,9 +79,7 @@ public interface UserManager {
 	 * true if user was added.
 	 */
 	public boolean addNewUser(String username, String password, String nickname,Shop shopname, Role role,
-			boolean approved,String cardNumber,String expirationDate,String cvv,boolean logInfo)
-	
-	
+			boolean approved,String cardNumber,String expirationDate,String cvv,boolean logInfo,String userWallet)
 			throws WeakPassword, PermissionDenied, SQLIntegrityConstraintViolationException;
 
 	/*
