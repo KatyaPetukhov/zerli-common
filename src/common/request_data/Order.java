@@ -1,5 +1,6 @@
-
 package common.request_data;
+
+import java.util.ArrayList;
 
 import common.JSONObject;
 
@@ -8,18 +9,21 @@ public class Order extends JSONObject {
 	public String username;
 	public String date;
 	public String hour;
-	public ProductList products;
+	public ProductListCart products;
 	public OrderStatus status;
 	public double totalPrice = 0.0;
 	public String recipient;
 	public String greetingMessage;
 	public String signature;
-	public Shop shop = Shop.NONE;
+	public Shop shop = null;
 	public String address;
 	public String city;
 	public String phone; // Recipient of order
 	public String paymentPhone; // Payment phone
 	public OrderType orderType;
+	public String timeOfOrder;
+	public boolean gotDelivery;
+	public CancelStatus cancel;
 
 	public Order() {
 		this.orderNumber = null;
@@ -27,7 +31,7 @@ public class Order extends JSONObject {
 		this.date = null;
 		this.hour = null;
 		this.products = null;
-		this.status = OrderStatus.valueOf(address);
+		this.status = null;
 		this.totalPrice = 0.0;
 		this.recipient = null;
 		this.greetingMessage = null;
@@ -38,12 +42,14 @@ public class Order extends JSONObject {
 		this.phone = null;
 		this.paymentPhone = null;
 		this.orderType = null;
+		this.gotDelivery = false;
+		this.cancel = null;
 	}
 
-	public Order(String orderNumber, String username, String date, String hour, ProductList products,
+	public Order(String orderNumber, String username, String date, String hour, ProductListCart products,
 			OrderStatus status, double totalPrice, String recipient, String greetingMessage, String signature,
 			Shop shop, String address, String city, String phone, String paymentName, String paymentPhone,
-			OrderType orderType) {
+			OrderType orderType, CancelStatus cancel, boolean gotDelivery) {
 		super();
 		this.orderNumber = orderNumber;
 		this.username = username;
@@ -61,6 +67,8 @@ public class Order extends JSONObject {
 		this.phone = phone;
 		this.paymentPhone = paymentPhone;
 		this.orderType = orderType;
+		this.cancel = cancel;
+		this.gotDelivery = gotDelivery;
 	}
 
 	@Override

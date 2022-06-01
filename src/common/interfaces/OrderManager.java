@@ -5,8 +5,5 @@ import common.request_data.OrderList;
 
 public interface OrderManager {
 	public Order getOrder(String username);
-
 	public OrderList getOrders(String username);
-
-	public OrderList getAllOrders(String username);
 }

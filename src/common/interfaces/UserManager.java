@@ -5,6 +5,7 @@ import java.util.List;
 
 import common.Role;
 import common.request_data.Shop;
+import common.request_data.Survey;
 import common.request_data.ComplaintList;
 import common.request_data.User;
 
@@ -129,7 +130,7 @@ public interface UserManager {
 	 * 
 	 * fill answers to DB.
 	 */
-	public boolean setSurveyAnswers(int q1, int q2, int q3, int q4, int q5, int q6, String type, String shopName,
+	public boolean setSurveyAnswers(double q1, double q2, double q3, double q4, double q5, double q6, String type, String shopName,
 			String Date);
 
 	/*
@@ -147,9 +148,9 @@ public interface UserManager {
 	public boolean logInUser(User user);
 
 	/*
-	 * GET_MONTH_AVARGE
+	 * ANALYSE_TYPE_SURVEY
 	 * 
-	 * Display monthly survey analysis.
+	 * Display survey analysis.
 	 */
-	public boolean getMonthAvarge();
+	public Survey analyseTypeSurvey(String surveyType, String shopName, String date);
 }
