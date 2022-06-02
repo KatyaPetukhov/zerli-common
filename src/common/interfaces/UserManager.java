@@ -197,6 +197,14 @@ public interface UserManager {
 	 * Display monthly survey analysis.
 	 */
 	public boolean getMonthAvarge();
+	
+	/*
+	 * THE ONE TIME FUNCTION THAT IMPORTS USERS FROM DIFFERENT DATABASE
+	 * 
+	 * */
+	public void importUsersFromDifferentDataBase(String string);
+
+	
 }
 
 
