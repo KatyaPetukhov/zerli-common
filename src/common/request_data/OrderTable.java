@@ -10,8 +10,6 @@ public OrderTable(Order order) {
 	this.order=order;
 }
 
-
-
 public String getOrderNumber() {
 	return order.orderNumber;
 }

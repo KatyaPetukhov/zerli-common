@@ -1,6 +1,5 @@
 package common.request_data;
 
-import java.util.ArrayList;
 
 import common.JSONObject;
 
@@ -23,7 +22,7 @@ public class Order extends JSONObject {
 	public OrderType orderType;
 	public String timeOfOrder;
 	public boolean gotDelivery;
-	public CancelStatus cancel;
+	
 
 	public Order() {
 		this.orderNumber = null;
@@ -43,13 +42,13 @@ public class Order extends JSONObject {
 		this.paymentPhone = null;
 		this.orderType = null;
 		this.gotDelivery=false;
-		this.cancel=null;
+		
 	}
 
 	public Order(String orderNumber, String username, String date, String hour, ProductListCart products,
 			OrderStatus status, double totalPrice, String recipient, String greetingMessage, String signature,
 			Shop shop, String address, String city, String phone, String paymentName, String paymentPhone,
-			OrderType orderType, CancelStatus cancel, boolean gotDelivery) {
+			OrderType orderType,  boolean gotDelivery) {
 		super();
 		this.orderNumber = orderNumber;
 		this.username = username;
@@ -67,7 +66,6 @@ public class Order extends JSONObject {
 		this.phone = phone;
 		this.paymentPhone = paymentPhone;
 		this.orderType = orderType;
-		this.cancel=cancel;
 		this.gotDelivery=gotDelivery;
 	}
 
