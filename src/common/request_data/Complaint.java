@@ -5,6 +5,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ChoiceBox;
 
+/**
+   *this is an json class that represents the complaint info
+   *by this class we can transfer the complaint data between user->client->sql
+  *@author Jessica and Yarden
+   */
 public class Complaint extends JSONObject {
 	public String userName;
 	public String orderId;
