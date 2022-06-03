@@ -5,7 +5,11 @@ import java.util.Map;
 
 import common.JSONObject;
 
-//KATYA
+/**
+   *this is an json class that represents item in cart 
+   *by this class we can transfer the cartItem analyze data between user->client->sql
+  *@author Katya and Aharon
+   */
 public class CartItem extends JSONObject {
 	public HashMap<String, Integer> items;
 	public Double price = 0.0;
