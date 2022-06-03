@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 import common.JSONObject;
 
+/**
+   *this is an json class that represents the complaints list 
+   *by this class we can transfer the complaints list  data between user->client->sql
+   *we can save here all the complaint for the supportrer that is stored in DB
+  *@author Jessica and Yarden
+   */
 public class ComplaintList extends JSONObject {
 	public int start;
 	public int amount;
