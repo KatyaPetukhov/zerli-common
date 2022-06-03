@@ -1,6 +1,5 @@
 package common.request_data;
 
-
 import java.util.ArrayList;
 
 import common.JSONObject;

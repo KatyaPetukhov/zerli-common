@@ -2,20 +2,27 @@ package common.request_data;
 
 public enum OrderType {
 	
-	NONE("None"),
+	//NONE("None"),
 	DELIVERY("Delivery"),
 	TAKE_AWAY("Take away");
 
 	
 	private String s;
 
-	OrderType(String s) {
+	OrderType(final String s) {
 		this.s = s;
 	}
 
+	
+	 public String getValue() {
+	        return s;
+	    }
+	
 	public String toString() {
-		return s;
+		return this.getValue();
 	}
+	
+	
     public static OrderType fromString(String text) {
         for (OrderType b : OrderType.values()) {
             if (b.s.equalsIgnoreCase(text)) {
