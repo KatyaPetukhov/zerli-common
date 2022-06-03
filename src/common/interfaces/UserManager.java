@@ -9,6 +9,7 @@ import common.interfaces.UserManager.PermissionDenied;
 import common.request_data.ComplaintList;
 import common.request_data.IncomeReport;
 import common.request_data.IncomeReportList;
+import common.request_data.OrderReport;
 import common.request_data.Shop;
 import common.request_data.User;
 import common.request_data.UsersList;
@@ -203,6 +204,13 @@ public interface UserManager {
 	 * 
 	 * */
 	public void importUsersFromDifferentDataBase(String string);
+	
+	/*
+	 * GET_ORDER_REPORT
+	 * 
+	 * Gets order report for manager and owner
+	 */
+	public OrderReport getOrderReport(Shop shop,String year,String Month);
 
 	
 }
