@@ -87,5 +87,8 @@ public OrderType getOrderType() {
 public String getTimeOfOrder() {
 	return order.timeOfOrder;
 }
+public double getPaidByWallet() {
+	return order.paidByWallet;
+}
 
 }
