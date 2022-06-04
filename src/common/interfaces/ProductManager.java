@@ -20,4 +20,10 @@ public interface ProductManager {
 	public boolean addProduct(Product product) throws PermissionDenied;
 
 	public void removeProduct(Product product);
+	
+	public boolean productToFromCatalogue(String name, boolean toFromCatalogue) throws PermissionDenied;
+	
+	public boolean setDiscount(String name, int discount) throws PermissionDenied;
+	
+	
 }

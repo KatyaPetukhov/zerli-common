@@ -1,9 +1,12 @@
 package common.interfaces;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 import common.Role;
+import common.request_data.Shop;
 import common.request_data.User;
+import common.request_data.UsersList;
 
 public interface UserManager {
 	/*
@@ -68,8 +71,9 @@ public interface UserManager {
 	 * be added only by Manager, otherwise PermissionDenied will be thrown. Returns
 	 * true if user was added.
 	 */
-	public boolean addNewUser(String username, String password, String nickname, Role role, boolean approved)
-			throws WeakPassword, PermissionDenied;
+	public boolean addNewUser(String username, String password, String nickname,Shop shopname, Role role,
+			boolean approved,String cardNumber,String expirationDate,String cvv,boolean logInfo,double userWallet)
+			throws WeakPassword, PermissionDenied, SQLIntegrityConstraintViolationException;
 
 	/*
 	 * APPROVE_USER
@@ -94,5 +98,6 @@ public interface UserManager {
 	 * Returns a list of "amount" existing users starting from user "start" by type
 	 * approved/not approved. Can be done only by Manager.
 	 */
-	public List<User> getUsers(boolean approved, int start, int amount) throws PermissionDenied;
+	public UsersList getUsers();
+	public boolean updateWallet(double wallet);
 }

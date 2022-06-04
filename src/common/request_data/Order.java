@@ -22,6 +22,7 @@ public class Order extends JSONObject {
 	public OrderType orderType;
 	public String timeOfOrder;
 	public boolean gotDelivery;
+	public double paidByWallet;
 	
 
 	public Order() {
@@ -42,13 +43,14 @@ public class Order extends JSONObject {
 		this.paymentPhone = null;
 		this.orderType = null;
 		this.gotDelivery=false;
+		this.paidByWallet=0.0;
 		
 	}
 
 	public Order(String orderNumber, String username, String date, String hour, ProductListCart products,
 			OrderStatus status, double totalPrice, String recipient, String greetingMessage, String signature,
 			Shop shop, String address, String city, String phone, String paymentName, String paymentPhone,
-			OrderType orderType,  boolean gotDelivery) {
+			OrderType orderType,  boolean gotDelivery,double paidByWallet) {
 		super();
 		this.orderNumber = orderNumber;
 		this.username = username;
@@ -67,6 +69,7 @@ public class Order extends JSONObject {
 		this.paymentPhone = paymentPhone;
 		this.orderType = orderType;
 		this.gotDelivery=gotDelivery;
+		this.paidByWallet=paidByWallet;
 	}
 
 	@Override

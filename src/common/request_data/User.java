@@ -43,6 +43,7 @@ public class User extends JSONObject {
 	public String cvv;
 	public boolean logInfo;
 	public String accountStatus; //Approved/Blocked/frozen
+	public Double userWallet;
 
 	public User() {
 		/*
@@ -62,16 +63,27 @@ public class User extends JSONObject {
 		this.exDate = null;
 		this.cvv = null;
 		this.logInfo = false;
+		this.userWallet = null;
 		
 	}
 	
 	public void setAccountStatus() {
+		
+		
+		if(userrole.equals(Role.CUSTOMER) || userrole.equals(Role.GUEST)) {
 		if(!approved)
 			accountStatus = "Blocked";
 		else if(userrole.equals(Role.CUSTOMER))
-				accountStatus="Approved";
-		else accountStatus ="Frozen";
+			accountStatus="Approved";	
+		else accountStatus="Frozen";
+		}
+		
+		else accountStatus="Approved";
+				
+		
 	}
+		
+	
 
 	public static User fromJson(String s) {
 		/* Add such function to each subclass! */
