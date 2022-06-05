@@ -6,6 +6,12 @@ import common.interfaces.UserManager.PermissionDenied;
 import common.request_data.Product;
 import common.request_data.ProductList;
 
+/**
+   *An interface implemented on both the client and the server with the same functions,
+   *this interface has the functionality related to products in stores and in the catalog.
+  *@Katya
+   */
+
 public interface ProductManager {
 	public static String ALL_CATEGORY = "All";
 
