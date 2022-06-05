@@ -5,6 +5,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ChoiceBox;
 
+/**
+   *JSON class that saves the sutable refund due to the complaint handaling  and can  be transferred between the client and the server
+  *@Jessican and Yarden
+   */
 public class Refund extends JSONObject {
 
 	public String orderId;
