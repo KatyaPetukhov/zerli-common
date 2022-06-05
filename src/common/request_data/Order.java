@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 import common.JSONObject;
 
+/**
+   *JSON class that saves information about one order  and can  be transferred between the client and the server
+   *for each order saves - number,username,time,orderstatus,order time,is canceled the phone and the city of the user.
+  *@Jessican and Yarden
+   */
+
 public class Order extends JSONObject {
 	public String orderNumber;
 	public String username;
