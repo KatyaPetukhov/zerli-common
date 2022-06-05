@@ -1,5 +1,12 @@
 package common.request_data;
 
+
+/**
+   *ENUM  that represent a orderstatus
+   *the status options:Approved,Not Approved,Waiting for approve"
+  *@Katya
+   */
+
 public enum OrderStatus {
 	/* User role Manager gets a shop, Owner gets all shops*/
 	APPROVED("Approved"),
