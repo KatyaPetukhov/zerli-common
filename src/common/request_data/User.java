@@ -3,6 +3,14 @@ package common.request_data;
 import common.JSONObject;
 import common.Role;
 
+
+/**
+   *User-a jason class that 
+   *this class help us to transform the user details between client and server
+   *
+  *@Katya and Ahron
+   */
+
 public class User extends JSONObject {
 	public String username;
 	public String password;
