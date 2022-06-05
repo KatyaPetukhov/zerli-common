@@ -2,6 +2,11 @@ package common.request_data;
 
 import common.JSONObject;
 
+/**
+   *JSON class that saves messages about errors and allows them to be transferred between the client and the server
+  *@Katys
+   */
+
 public class ServerError extends JSONObject {
 	public String message;
 
