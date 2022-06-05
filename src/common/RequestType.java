@@ -1,5 +1,12 @@
 package common;
 
+
+/**
+   *enum that saves all the types of request that a client ask for server due to his role
+   *for each product saves - nams,price,discount,category,image name
+  *@Jessican and Yarden
+   */
+
 public enum RequestType {
 	// List of requests supported by server
 	/* Errors: */
