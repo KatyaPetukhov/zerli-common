@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 import common.JSONObject;
 
+/**
+   *JSON object that represnt a order List and  saves information about order List, and can  be transferred between the client and the server
+   *for each OrderList saves - ther user order list,the amount of products and a start counter
+  *@Jessican and Yarden
+   */
+
 public class OrderList extends JSONObject  {
 	public int start;
 	public int amount;
