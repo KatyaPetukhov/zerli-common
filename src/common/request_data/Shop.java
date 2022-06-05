@@ -1,5 +1,14 @@
 package common.request_data;
 
+/**
+   *Shop  enum class savingInformation about the stores 
+   *there is 2 stores in our system-Nahariya,Haifa
+   *this class also saves  the permissions that can be made to the store
+   * amanger- have premission to his store and a owner to all shops
+   *long method descripton
+  *@author Jessica and Yarden
+   */
+
 public enum Shop {
 	/* User role Manager gets a shop, Owner gets all shops */
 	ALL("All"),
