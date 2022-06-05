@@ -8,7 +8,8 @@ public enum Role {
 	WORKER("Worker"),
 	SUPPORT("Support"),
 	GUEST("Guest"),
-	DELIVERY("Delivery Person");
+	DELIVERY("DeliveryPerson"),
+	SERVICE_EXPERT("Expert");
 
 	private String s;
 

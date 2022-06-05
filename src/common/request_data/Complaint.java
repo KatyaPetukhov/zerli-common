@@ -13,8 +13,8 @@ public class Complaint extends JSONObject {
 	public String price;
 	public String complaintStatus;
 	public String refund;
-	public Shop shop;
-
+	public Shop shop;   
+    public String supportName;
 
 	public Complaint() {
 		this.userName = null;
@@ -25,10 +25,11 @@ public class Complaint extends JSONObject {
 		this.complaintStatus = null;
 		this.refund = null;
 		this.shop = null;
+		this.supportName=null;
 	}
 
 	public Complaint(String userName, String orderId, String complaint, String date, String price,
-			String complaintStatus, String refund,Shop shop) {
+			String complaintStatus, String refund, Shop shop,String supportName) {
 		this.userName = userName;
 		this.orderId = orderId;
 		this.complaint = complaint;
@@ -37,6 +38,15 @@ public class Complaint extends JSONObject {
 		this.complaintStatus = complaintStatus;
 		this.refund = refund;
 		this.shop = shop;
+		this.supportName=supportName;
+	}
+
+	public String getSupportName() {
+		return supportName;
+	}
+
+	public void setSupportName(String supportName) {
+		this.supportName = supportName;
 	}
 
 	public String getRefund() {
@@ -94,7 +104,7 @@ public class Complaint extends JSONObject {
 	public void setComplaintStatus(String complaintStatus) {
 		this.complaintStatus = complaintStatus;
 	}
-	
+
 	public Shop getShop() {
 		return shop;
 	}
@@ -102,7 +112,6 @@ public class Complaint extends JSONObject {
 	public void setShop(Shop shop) {
 		this.shop = shop;
 	}
-
 
 	public static Complaint fromJson(String s) {
 		/* Add such function to each subclass! */

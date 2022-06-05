@@ -21,7 +21,7 @@ public class CartItem extends JSONObject{
 	public String paymentPhone;
 	public OrderType orderType = null;
 	public boolean submit=false;
-
+	public double paidByWallet;
 
 	
 

@@ -8,6 +8,7 @@ public class Product extends JSONObject {
 	public int discount; // Percent
 	public String category;
 	public String imageString;
+	public boolean inCatalogue ;
 
 	public Product() {
 		name = null;
@@ -15,14 +16,16 @@ public class Product extends JSONObject {
 		discount = 0;
 		category = null;
 		imageString = null;
+		inCatalogue = false;
 	}
 
-	public Product(String name, double price, int discount, String category, String imageString) {
+	public Product(String name, double price, int discount, String category, String imageString,boolean inCatalogue) {
 		this.name = name;
 		this.price = price;
 		this.discount = discount;
 		this.category = category;
 		this.imageString = imageString;
+		this.inCatalogue = inCatalogue;
 	}
 
 	public static Product fromJson(String s) {

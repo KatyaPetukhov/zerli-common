@@ -1,14 +1,17 @@
 package common.interfaces;
 
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 import common.Role;
 import common.interfaces.UserManager.PermissionDenied;
+import common.request_data.AnalyseFile;
 import common.request_data.ComplaintList;
 import common.request_data.IncomeReport;
 import common.request_data.IncomeReportList;
+import common.request_data.Order;
 import common.request_data.OrderReport;
 import common.request_data.Shop;
 import common.request_data.User;
@@ -162,15 +165,6 @@ public interface UserManager {
 	public User getLoggedInUser(String username, String password);
 	
 	/*
-	*
-	 * ADD_NEW_COMPLIANT
-	 * 
-	 * Return boolean if the new complaint were added to sql
-	 */
-	public boolean addNewCompliant(String userName, String orderId, String complaint, String date, String price,
-			String complaintStatus, String supportName, String refund,Shop shop);
-
-	/*
 	 * GET_ALL_COMPLAINTS
 	 * 
 	 * Return list of all complaints that specific support user has asked for.
@@ -184,14 +178,7 @@ public interface UserManager {
 	 */
 	public boolean setRefundAmount(String orderId, String refund);
 
-	/*
-	 * SET_SURVEY_ANSWERS
-	 * 
-	 * fill answers to DB.
-	 */
-	public boolean setSurveyAnswers(int q1, int q2, int q3, int q4, int q5, int q6, String type, String shopName,
-			String Date);
-	
+
 	/*
 	 * GET_MONTH_AVARGE
 	 * 
@@ -211,7 +198,48 @@ public interface UserManager {
 	 * Gets order report for manager and owner
 	 */
 	public OrderReport getOrderReport(Shop shop,String year,String Month);
+	
+	public boolean updateWallet(double wallet);
+	
+	/*
+	 * GET_USER_WALLET
+	 * 
+	 * Gets the user current wallet
+	 */
+	public String getUserWallet(String username);
 
+	
+	/*
+	 * CANEL_REFUND
+	 * 
+	 * Refund the proper amount to the userWallet
+	 */
+	void updateWalletR(Order order);
+	
+
+	/*
+	 * ADD_NEW_COMPLIANT
+	 * 
+	 * Return boolean if the new complaint were added to sql
+	 */
+	public boolean addNewCompliant(String userName, String orderId, String complaint, String date, String price,
+			String complaintStatus, String refund, Shop shop, String supportName);
+
+	/*
+	 * SET_SURVEY_ANSWERS
+	 * 
+	 * fill answers to DB.
+	 */
+	public boolean setSurveyAnswers(double q1, double q2, double q3, double q4, double q5, double q6, String type,
+			String shopName, String Date, String surveyAnalyseId);
+	
+	/*
+	 * ANALYSE_TYPE_SURVEY
+	 * 
+	 * Display survey analysis.
+	 */
+	public boolean analyseTypeSurvey(AnalyseFile myFile) throws FileNotFoundException;
+	
 	
 }
 

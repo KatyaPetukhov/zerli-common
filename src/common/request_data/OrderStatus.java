@@ -7,7 +7,10 @@ public enum OrderStatus {
 	WAITING_FOR_APPROVE("Waiting for approve"),
 	CANCELED("Canceled"),
 	NOT_CANCELED("Not Canceled"),
-	WAITING_FOR_CANCEL("Waiting for Cancel");
+	WAITING_FOR_CANCEL("Waiting for Cancel"),
+	ON_DELIVERY("Waiting to be deliverd"),
+	DID_NOT_DELIVERD_ON_TIME("Late delivery"),
+	DELIVERD_ON_TIME("Deliverd on time");
 	
 	private String s;
  

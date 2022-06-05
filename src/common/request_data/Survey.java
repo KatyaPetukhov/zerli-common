@@ -5,15 +5,16 @@ import common.JSONObject;
 public class Survey extends JSONObject {
 
 	public int surveyId;
-	public int q1;
-	public int q2;
-	public int q3;
-	public int q4;
-	public int q5;
-	public int q6;
+	public double q1;
+	public double q2;
+	public double q3;
+	public double q4;
+	public double q5;
+	public double q6;
 	public String type;
 	public String shopName;
 	public String date;
+	public String surveyAnalyseId;
 
 	public Survey() {
 		this.type = null;
@@ -26,10 +27,11 @@ public class Survey extends JSONObject {
 		this.q4 = 0;
 		this.q5 = 0;
 		this.q6 = 0;
+		this.surveyAnalyseId = null;
 	}
 
-	public Survey(int question1, int question2, int question3, int question4, int question5, int question6, String type,
-			String shopName, String date) {
+	public Survey(double question1, double question2, double question3, double question4, double question5,
+			double question6, String type, String shopName, String date, String surveyAnalyseId) {
 		this.type = type;
 		this.date = date;
 		this.shopName = shopName;
@@ -39,6 +41,15 @@ public class Survey extends JSONObject {
 		this.q4 = question4;
 		this.q5 = question5;
 		this.q6 = question6;
+		this.surveyAnalyseId = surveyAnalyseId;
+	}
+
+	public String getSurveyAnalyseId() {
+		return surveyAnalyseId;
+	}
+
+	public void setSurveyAnalyseId(String surveyAnalyseId) {
+		this.surveyAnalyseId = surveyAnalyseId;
 	}
 
 	public String getShopName() {
@@ -73,7 +84,7 @@ public class Survey extends JSONObject {
 		this.surveyId = surveyId;
 	}
 
-	public int getQuestion1() {
+	public double getQuestion1() {
 		return q1;
 	}
 
@@ -81,7 +92,7 @@ public class Survey extends JSONObject {
 		this.q1 = question1;
 	}
 
-	public int getQuestion2() {
+	public double getQuestion2() {
 		return q2;
 	}
 
@@ -89,7 +100,7 @@ public class Survey extends JSONObject {
 		this.q2 = question2;
 	}
 
-	public int getQuestion3() {
+	public double getQuestion3() {
 		return q3;
 	}
 
@@ -97,7 +108,7 @@ public class Survey extends JSONObject {
 		this.q3 = question3;
 	}
 
-	public int getQuestion4() {
+	public double getQuestion4() {
 		return q4;
 	}
 
@@ -105,7 +116,7 @@ public class Survey extends JSONObject {
 		this.q4 = question4;
 	}
 
-	public int getQuestion5() {
+	public double getQuestion5() {
 		return q5;
 	}
 
@@ -113,7 +124,7 @@ public class Survey extends JSONObject {
 		this.q5 = question5;
 	}
 
-	public int getQuestion6() {
+	public double getQuestion6() {
 		return q6;
 	}
 

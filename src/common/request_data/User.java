@@ -43,7 +43,7 @@ public class User extends JSONObject {
 	public String cvv;
 	public boolean logInfo;
 	public String accountStatus; //Approved/Blocked/frozen
-	public String userWallet;
+	public Double userWallet;
 
 	public User() {
 		/*
@@ -57,7 +57,7 @@ public class User extends JSONObject {
 		this.password = password;
 		this.nickname = null;
 		this.userrole = null;
-		this.shopname = Shop.NONE;
+		this.shopname = null;
 		this.approved = false;
 		this.cardNumber = null;
 		this.exDate = null;

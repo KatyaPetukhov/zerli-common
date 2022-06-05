@@ -7,6 +7,7 @@ import common.JSONObject;
 public class ComplaintList extends JSONObject {
 	public int start;
 	public int amount;
+	public String supportName;
 	// public String category;
 	public ArrayList<Complaint> complaints; // Not List because it should be initialized by default during JSON //
 											// creation.
