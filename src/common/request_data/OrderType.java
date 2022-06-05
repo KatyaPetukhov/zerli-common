@@ -1,5 +1,12 @@
 package common.request_data;
 
+
+/**
+   *JSON class that saves information about one the order tyoe  and can  be transferred between the client and the server
+   *for each order type saves if it is a delivery or a take away
+  *@Jessican and Yarden
+   */
+
 public enum OrderType {
 
 	// NONE("None"),
