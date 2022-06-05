@@ -2,6 +2,15 @@ package common.request_data;
 
 import common.JSONObject;
 
+
+/**
+   *Survey a jason class
+   *helps up to save the user survey's answers,the survey type and date,
+   *so we can transfom it between the client and server and save in sql
+   *long method descripton
+  *@author Jessica and Yarden
+   */
+
 public class Survey extends JSONObject {
 
 	public int surveyId;
