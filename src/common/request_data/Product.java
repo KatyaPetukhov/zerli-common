@@ -2,6 +2,12 @@ package common.request_data;
 
 import common.JSONObject;
 
+/**
+   *JSON class that saves information about one product   and can  be transferred between the client and the server
+   *for each product saves - nams,price,discount,category,image name
+  *@Jessican and Yarden
+   */
+
 public class Product extends JSONObject {
 	public String name;
 	public double price;
