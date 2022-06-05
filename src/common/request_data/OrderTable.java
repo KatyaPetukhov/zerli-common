@@ -1,5 +1,12 @@
 package common.request_data;
 
+
+/**
+   *JSON class that saves informtion about order so it can be insert to table and can  be transferred between the client and the server
+   *for each OrderTable saves - ordernumber,the detais of the user that orderd,the order time,the products in order and the gretting card.
+  *@Jessican and Yarden
+   */
+
 public class OrderTable {
 	public Order order;
 
@@ -23,6 +30,11 @@ public class OrderTable {
 	public String getHour() {
 		return order.hour;
 	}
+
+	/**
+   *Returns all products on order Clearly as a string
+  *@author Katya
+   */
 
 	public String getProducts() {
 		StringBuilder str = new StringBuilder();
